@@ -8,3 +8,4 @@ C:\test\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe
 C:\test\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.pdb
 C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.exe
 C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Login.resources
