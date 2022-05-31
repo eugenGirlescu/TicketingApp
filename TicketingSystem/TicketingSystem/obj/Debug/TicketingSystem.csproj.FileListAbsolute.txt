@@ -1,0 +1,10 @@
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojAssemblyReference.cache
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Properties.Resources.resources
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Register.resources
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.cache
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.CoreCompileInputs.cache
+C:\test\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe.config
+C:\test\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe
+C:\test\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.pdb
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.exe
+C:\test\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
