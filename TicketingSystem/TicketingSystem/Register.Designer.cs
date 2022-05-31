@@ -37,6 +37,7 @@
             this.txtFname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,9 +78,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(557, 333);
+            this.btnRegister.AutoSize = true;
+            this.btnRegister.Location = new System.Drawing.Point(366, 259);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(75, 27);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -114,11 +116,23 @@
             this.txtPass.Size = new System.Drawing.Size(100, 22);
             this.txtPass.TabIndex = 8;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.Location = new System.Drawing.Point(314, 312);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(189, 27);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.Text = "Have account? Login now!";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtFname);
@@ -146,5 +160,6 @@
         private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
