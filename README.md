@@ -21,3 +21,18 @@
 
 # Importing SQL Server Database :
 ### Step 1: Right Click on the Database folder and select “Import Data-Tier Application” and click “Next.
+### Step 2: Select the file which you have exported and change the name of the database in "ticketing"
+### Click next until you finish.
+
+# Open the project in Visual Studio and connect with MS SQL Server
+### Go to Tools menu > Click "Connect to Database"
+### By default, the data source is selected as Microsoft SQL Server (SQL Client)
+### Provide "Server name" to server name from MS SQL connection and Select our database in the dropdown as "ticketing"
+### We need to verify the database connection by clicking the "Test Connection" button as shown below, Once the connection is verified you will see the "Test connection succeeded" message box.
+### Once the database connection is created, then you will see the connection details in Visual Studio Server Explorer
+### How do I know the connection string?
+
+Right Click database connection > Properties > Copy "Connection string" for our reference. Also, in App.config you should add this: add name="connString".
+###
+
+
