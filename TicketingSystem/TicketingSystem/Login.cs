@@ -57,7 +57,7 @@ namespace TicketingSystem
                 }
             } else
             {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter value in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
