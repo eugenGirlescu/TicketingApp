@@ -26,10 +26,11 @@ namespace TicketingSystem
 
         private const String INSERT_QUERY = "INSERT INTO [dbo].[ticket](subject,description) VALUES(@subject,@description)";
 
-        private const String UPDATE_QUERY_STATUS_OPEN = "UPDATE [dbo].[ticket] SET subject=@subject,description=@description, status=@status where id=@id";
+        private const String UPDATE_QUERY_STATUS_OPEN = "UPDATE [dbo].[ticket] SET subject=@subject,description=@description where id=@id";
 
-        private const String UPDATE_QUERY_STATUS_CLOSED= "UPDATE [dbo].[ticket] SET subject=@subject,description=@description, status=@status,closeDate=@closeDate where id=@id";
+        private const String UPDATE_QUERY_STATUS_CLOSED = "UPDATE [dbo].[ticket] SET subject=@subject,description=@description,status=@status,closeDate=@closeDate where id=@id";
 
+        private const String DELETE_QUERY = "DELETE FROM [dbo].[ticket] WHERE id=@id";
         public DataTable GetTickets()
         {
             var datatable = new DataTable();
@@ -82,20 +83,33 @@ namespace TicketingSystem
 
             rows = cmd.ExecuteNonQuery();
 
-
             return (rows > 0) ? true : false;
         }
         public bool updateTicket(Ticket ticket)
         {
             if (ticket.status == "Open")
             {
-                return executeQuery(ticket,UPDATE_QUERY_STATUS_OPEN);
+                return executeQuery(ticket, UPDATE_QUERY_STATUS_OPEN);
             }
             else
             {
-                return executeQuery(ticket,UPDATE_QUERY_STATUS_CLOSED);
+                return executeQuery(ticket, UPDATE_QUERY_STATUS_CLOSED);
             }
-            
+        }
+
+        public bool deleteTicket(Ticket ticket)
+        {
+            int rows;
+            using (SqlConnection con = new SqlConnection(myConn))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(DELETE_QUERY, con))
+                {
+                    com.Parameters.AddWithValue("@id", ticket.id);
+                    rows = com.ExecuteNonQuery();
+                }
+            }
+            return (rows > 0) ? true : false;
         }
     }
 }

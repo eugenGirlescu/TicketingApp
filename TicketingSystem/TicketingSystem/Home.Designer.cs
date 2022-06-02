@@ -40,6 +40,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cboxStatus = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +126,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(359, 291);
+            this.btnClear.Location = new System.Drawing.Point(50, 356);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 11;
@@ -154,11 +155,22 @@
             this.cboxStatus.Size = new System.Drawing.Size(121, 24);
             this.cboxStatus.TabIndex = 13;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(350, 291);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 540);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cboxStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClear);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboxStatus;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

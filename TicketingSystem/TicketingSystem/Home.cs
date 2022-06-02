@@ -18,8 +18,7 @@ namespace TicketingSystem
         public Home()
         {
             InitializeComponent();
-            txtId.Enabled = false;
-            cboxStatus.Enabled = false;
+            cboxStatus.SelectedIndex = 0;
             setDataGridView();
         }
 
@@ -27,8 +26,6 @@ namespace TicketingSystem
         {
             
         }
-
-
         private void clearControls()
         {
             txtId.Text = "";
@@ -39,8 +36,9 @@ namespace TicketingSystem
         private void setDataGridView()
         {
             dataGridView.DataSource = ticket.GetTickets();
+            txtId.Enabled = false;
+            cboxStatus.Enabled = false;
         }
-
         private void fillWithData(DataGridViewCellEventArgs e)
         {
             var index = e.RowIndex;
@@ -73,7 +71,6 @@ namespace TicketingSystem
                 MessageBox.Show("Subject cannot be empty...");
             }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (ticket.subject != string.Empty)
@@ -82,8 +79,9 @@ namespace TicketingSystem
                 ticket.subject = txtSubject.Text;
                 ticket.description = txtDescription.Text;
                 ticket.status = cboxStatus.SelectedItem.ToString();
+                
                 var succes = ticket.updateTicket(ticket);
-                dataGridView.DataSource = ticket.GetTickets();
+                setDataGridView();
                 btnCreate.Enabled = true;
 
                 if (succes)
@@ -106,12 +104,10 @@ namespace TicketingSystem
         {
             
         }
-
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
         }
-
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnCreate.Enabled = false;
@@ -120,12 +116,28 @@ namespace TicketingSystem
 
             fillWithData(e);
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearControls();
             btnCreate.Enabled = true;
             btnUpdate.Enabled = true;
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ticket.id = txtId.Text;
+            var succes = ticket.deleteTicket(ticket);
+            btnCreate.Enabled = true;
+            setDataGridView();
+            if (succes)
+            {
+                clearControls();
+                MessageBox.Show("Ticket has been deleted successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error occured. Please try again...");
+            }
+
         }
     }
 }
