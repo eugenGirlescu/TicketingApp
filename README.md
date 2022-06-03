@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[register](
 ### COPY-PASTE this script to create `ticket` table:
 
 ```
-CREATE TABLE [dbo].[ticket2](
+CREATE TABLE [dbo].[ticket](
 	[id] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[subject] [varchar](100)  NOT NULL,
 	[description] [varchar](100) NULL,
